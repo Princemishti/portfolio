@@ -32,16 +32,15 @@
 
 html { 
   scroll-behavior: smooth; 
-  height: 100%; 
 }
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-  overflow-y: auto !important;
+  overflow-y: auto;
   line-height: 1.6;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* ── SCROLLBAR ── */
@@ -728,7 +727,7 @@ section { padding: 96px 0; }
 /* ── CONTACT ── */
 #contact {
   background: var(--bg);
-  position: relative; overflow: hidden;
+  position: relative;
 }
 
 .contact-glow {
@@ -961,7 +960,7 @@ footer {
   .nav-links { display: none; }
   .wrap { padding: 0 20px; }
   section { padding: 72px 0; }
-  .projects-grid, .ach-grid, .skills-wrapper { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   footer { padding: 20px; }
@@ -985,7 +984,7 @@ footer {
       <li><a href="#resume" data-num="02.">Resume</a></li>
       <li><a href="#skills" data-num="03.">Skills</a></li>
       <li><a href="#projects" data-num="04.">Projects</a></li>
-      <li><a href="#achievements" data-num="05.">Awards</a></li>
+<!-- <li><a href="#achievements" data-num="05.">Awards</a></li> -->
       <li><a href="#certifications" data-num="06.">Certs</a></li>
       <li><a href="#contact" data-num="07.">Contact</a></li>
     </ul>
@@ -1235,7 +1234,15 @@ footer {
       </div>
 
       <div class="skill-icon-card">
-        <svg viewBox="0 0 128 128" width="38" height="38"><path fill="#181616" d="M64 5.1C28.7 5.1 0 33.8 0 69.1c0 26.7 17.3 49.3 41.3 57.3 3 .6 4.1-1.3 4.1-2.9 0-1.4-.1-6.2-.1-11.2-16.8 3.7-20.3-7.1-20.3-7.1-2.7-7-6.7-8.8-6.7-8.8-5.5-3.7.4-3.7.4-3.7 6.1.4 9.3 6.2 9.3 6.2 5.4 9.2 14.1 6.6 17.6 5 .5-3.9 2.1-6.6 3.8-8.1-13.4-1.5-27.5-6.7-27.5-29.8 0-6.6 2.4-12 6.2-16.2-.6-1.5-2.7-7.7.6-16 0 0 5.1-1.6 16.6 6.2C53.7 35 58.9 34.3 64 34.3s10.3.7 15.1 2c11.5-7.8 16.6-6.2 16.6-6.2 3.3 8.3 1.2 14.5.6 16 3.9 4.2 6.2 9.6 6.2 16.2 0 23.2-14.1 28.3-27.6 29.8 2.2 1.9 4.1 5.5 4.1 11.2 0 8.1-.1 14.6-.1 16.6 0 1.6 1.1 3.5 4.1 2.9C110.7 118.4 128 95.8 128 69.1 128 33.8 99.3 5.1 64 5.1z"/><circle fill="#181616" cx="64" cy="64" r="0"/></svg>
+        <svg viewBox="0 0 128 128" width="38" height="38">
+          <defs>
+            <linearGradient id="ghGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#9B59FF"/>
+              <stop offset="100%" style="stop-color:#00E5FF"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#ghGrad)" d="M64 5.1C28.7 5.1 0 33.8 0 69.1c0 26.7 17.3 49.3 41.3 57.3 3 .6 4.1-1.3 4.1-2.9 0-1.4-.1-6.2-.1-11.2-16.8 3.7-20.3-7.1-20.3-7.1-2.7-7-6.7-8.8-6.7-8.8-5.5-3.7.4-3.7.4-3.7 6.1.4 9.3 6.2 9.3 6.2 5.4 9.2 14.1 6.6 17.6 5 .5-3.9 2.1-6.6 3.8-8.1-13.4-1.5-27.5-6.7-27.5-29.8 0-6.6 2.4-12 6.2-16.2-.6-1.5-2.7-7.7.6-16 0 0 5.1-1.6 16.6 6.2C53.7 35 58.9 34.3 64 34.3s10.3.7 15.1 2c11.5-7.8 16.6-6.2 16.6-6.2 3.3 8.3 1.2 14.5.6 16 3.9 4.2 6.2 9.6 6.2 16.2 0 23.2-14.1 28.3-27.6 29.8 2.2 1.9 4.1 5.5 4.1 11.2 0 8.1-.1 14.6-.1 16.6 0 1.6 1.1 3.5 4.1 2.9C110.7 118.4 128 95.8 128 69.1 128 33.8 99.3 5.1 64 5.1z"/>
+        </svg>
         <span class="skill-icon-name">GitHub</span>
       </div>
 
@@ -1245,7 +1252,15 @@ footer {
       </div>
 
       <div class="skill-icon-card">
-        <svg viewBox="0 0 128 128" width="38" height="38"><path fill="#000" d="M64 8C33.1 8 8 33.1 8 64s25.1 56 56 56 56-25.1 56-56S94.9 8 64 8zm29.3 81.3L64 105.7l-29.3-16.4V38.7L64 22.3l29.3 16.4v54.6z"/><path fill="#000" d="M64 32.1L44 43.7v22.5l-10-5.6V38.7L64 22.3l30 16.4v21.9l-10 5.6V43.7L64 32.1zm0 63.8l20-11.6V62.6l10 5.6v20.4L64 105.7 34 89.3V68.9l10-5.6V84.3L64 95.9z"/></svg>
+        <svg viewBox="0 0 128 128" width="38" height="38">
+          <defs>
+            <linearGradient id="vercelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00FFB2"/>
+              <stop offset="100%" style="stop-color:#7B61FF"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#vercelGrad)" d="M64 8L8 120h112L64 8z"/>
+        </svg>
         <span class="skill-icon-name">Vercel</span>
       </div>
 
@@ -1348,7 +1363,7 @@ footer {
 </section>
 
 <!-- ACHIEVEMENTS -->
-<section id="achievements">
+<!-- <section id="achievements">
   <div class="wrap">
     <div class="section-label">Achievements</div>
     <div class="neon-line"></div>
@@ -1404,7 +1419,7 @@ footer {
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
@@ -1480,9 +1495,9 @@ footer {
           Drop me a message — I typically respond within 24 hours.
         </p>
         <div class="contact-items">
-<a href="/cdn-cgi/l/email-protection#0964607a617d60797b60676a6c3a3038496e64686065276a6664" class="contact-item">
+<a href="mailto:princemishti77@gmail.com" class="contact-item">
             <div class="ci-icon">✉</div>
-            <div><span class="ci-label">Email</span><span><span class="__cf_email__" data-cfemail="0777756e69646247627f666a776b622964686a">[email&#160;protected]</span></span></div>
+            <div><span class="ci-label">Email</span><span>princemishti77@gmail.com</span></div>
             <span class="ci-arrow">→</span>
           </a>
           <a href="https://www.linkedin.com/in/prince77/" target="_blank" class="contact-item">
@@ -1538,6 +1553,8 @@ footer {
   </form>
 
 </div>
+    </div><!-- /.contact-grid -->
+  </div><!-- /.wrap -->
 </section>
 
 <!-- FOOTER -->
@@ -1548,7 +1565,7 @@ footer {
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 
 
   // Scroll reveal — works for local files too
@@ -1675,3 +1692,6 @@ hamburger.setAttribute('aria-label', 'Toggle navigation');
     this.nextElementSibling.style.display = 'flex';
   });
 
+</script>
+</body>
+</html>
